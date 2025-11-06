@@ -1,5 +1,13 @@
-# Data files
-data/*
+# Private Data files
+**/*_private/
+**/*_private.*
+**/*_private
+
+# Temporary directories
+**/tmp/
+
+# macOS system files
+**/.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
