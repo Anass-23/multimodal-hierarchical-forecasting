@@ -30,7 +30,7 @@ class TestDataPathConstants:
         """Logical relations verification"""
         assert DATA_DIR.name == "data"
         assert RAW_DATA_DIR == DATA_DIR / "raw"
-        assert RTU_DATA_DIR == RAW_DATA_DIR / "RTU data"
+        assert RTU_DATA_DIR == RAW_DATA_DIR / "RTU_data_private"
 
     @pytest.mark.parametrize("p", ["DATA_DIR", "RAW_DATA_DIR", "RTU_DATA_DIR"])
     def test_paths_are_absolute(self, p):
