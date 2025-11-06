@@ -12,7 +12,7 @@ build:
 	pdflatex $(TEX)
 
 clean:
-	rm -f *.aux *.bbl *.blg *.log *.out *.toc *.lof *.lot
+	rm -f *.aux *.bbl *.blg *.log *.out *.toc *.lof *.lot *.bbl-SAVE-ERROR *.bcf *.bcf-SAVE-ERROR *.blg *-blx.aux *-blx.bib *.run.xml *.xmpi
 
 distclean: clean
 	rm -f $(PDF)
