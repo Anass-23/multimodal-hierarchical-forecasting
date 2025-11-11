@@ -11,7 +11,8 @@ dependencies = [
   "pandas>=2.2",
   "matplotlib>=3.9",
   "scikit-learn>=1.5",
-  "jupyter>=1.0"
+  "jupyter>=1.0",
+  "pydantic>=2.10" # current using Pydantic version 2.12.4
 ]
 
 [project.optional-dependencies]
