@@ -39,6 +39,7 @@ addopts = "--maxfail=1 --disable-warnings -q"
 testpaths = ["tests"]
 
 [tool.mypy]
+plugins = ["pydantic.mypy"]
 python_version = "3.12"
 warn_return_any = true
 warn_unused_configs = true

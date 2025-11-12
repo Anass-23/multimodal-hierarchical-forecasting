@@ -46,10 +46,7 @@ class Programme(BaseModel):
 
 class Department(BaseModel):
     """
-    Academic department within a university.
-
-    Represents an organizational unit that offers courses and hosts
-    academic programmes.
+    Academic department within a university which offers courses.
     """
 
     department_id: str = Field(..., description="Unique department identifier")
@@ -61,14 +58,14 @@ class Department(BaseModel):
 
 class University(BaseModel):
     """
-    University entity - top level organizational structure.
-
     Represents the entire university with all its departments and students.
     This is the root of the organizational hierarchy.
 
     Computed Properties:
         total_students: Count of enrolled students
         total_departments: Count of departments
+        total_courses: Count of courses offered
+        total_enrollments: Total student enrollments across all students
     """
 
     university_id: str = Field(..., description="Unique university identifier")
@@ -104,6 +101,20 @@ class University(BaseModel):
             Count of departments in the departments list
         """
         return len(self.departments)
+
+    @computed_field  # type: ignore[misc]
+    @property
+    def total_courses(self) -> int:
+        """
+        Get total number of courses offered.
+
+        Returns:
+            Count of unique courses across all departments
+        """
+        course_ids = {
+            course.course_id for dept in self.departments for course in dept.courses
+        }
+        return len(course_ids)
 
     @computed_field  # type: ignore[misc]
     @property

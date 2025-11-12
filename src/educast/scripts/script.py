@@ -74,7 +74,9 @@ students_list = []
 
 for student_id, attempts in students_dict.items():
     student_obj = Student(
-        student_id=student_id, history=AcademicHistory(attempts=attempts)
+        student_id=student_id,
+        name="Unknown",
+        history=AcademicHistory(attempts=attempts),
     )
     students_list.append(student_obj)
 
@@ -88,7 +90,6 @@ department = Department(
     department_id="EMIT",
     name="Departament d'Enginyeria Minera, Industrial i TIC",
     courses=list(course_map.values()),
-    programmes=[programme],
 )
 
 # University

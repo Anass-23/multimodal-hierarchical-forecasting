@@ -10,8 +10,7 @@ from .clickstream import ClickstreamData
 
 class Course(BaseModel):
     """
-    Represents a course that can be taken by students. Courses can be
-    associated with departments and programmes.
+    Represents a course that can be taken by students.
     """
 
     course_id: str = Field(..., description="Unique course identifier")
@@ -27,7 +26,6 @@ class AttemptedCourse(BaseModel):
 
     Tracks a student's enrollment and performance in a course,
     including grade information and activity logs.
-
 
     Computed Properties:
         passed: Whether the student passed the course (None if ungraded)
@@ -53,5 +51,4 @@ class AttemptedCourse(BaseModel):
         Returns:
             True if passed, False if failed, None if not yet graded
         """
-        # return self.grade.passed if self.grade else None
-        return self.grade >= 5 if self.grade else None
+        return self.grade >= 5 if self.grade is not None else None
