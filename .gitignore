@@ -5,6 +5,9 @@
 
 # Temporary directories
 **/tmp/
+**/tmp_*
+**/*_tmp_*
+**/**_tmp.*
 
 # macOS system files
 **/.DS_Store
