@@ -1,4 +1,4 @@
-# EduCast: Multimodal Hierarchical Forecasting for Student Enrollment
+# EduCast: Hierarchical Forecasting for Student Enrollment
 
 **Master's Thesis (TFM)**, MERIT, EPSEM-UPC  
 **Author:** Anass Anhari  
