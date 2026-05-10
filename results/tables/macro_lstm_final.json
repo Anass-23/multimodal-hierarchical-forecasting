@@ -1,0 +1,25 @@
+{
+  "experiment_name": "macro_lstm",
+  "timestamp": "20260502_201625",
+  "metrics": {
+    "MAE": 5.574752869194045,
+    "MAE+": 4.074995886003659,
+    "MAE-": 6.720499856714037
+  },
+  "metadata": {
+    "model": "lstm_macro",
+    "transform": "aggregate_seq",
+    "hyperparameters": {
+      "hidden_size": 128,
+      "num_layers": 1,
+      "dropout": 0.3,
+      "epochs": 100,
+      "batch_size": 4,
+      "window_size": 3
+    },
+    "random_seed": 42,
+    "train_samples": 15,
+    "test_samples": 7,
+    "split_info": "year >= 2018"
+  }
+}

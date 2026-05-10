@@ -1,0 +1,18 @@
+{
+  "experiment_name": "comparison_all",
+  "timestamp": "20260501_110621",
+  "metrics": {
+    "MAE_Naive": 2.074074074074074,
+    "MAE_Student": 2.0819451571982315,
+    "MAE_Macro": 5.727657963989904
+  },
+  "metadata": {
+    "models": [
+      "Naive",
+      "Student",
+      "Macro"
+    ],
+    "split_year": 2018,
+    "excluded_courses": 24
+  }
+}

@@ -1,0 +1,65 @@
+# EduCast hyperparameter reference
+# All values match the defaults in educast/config.py
+
+seed: 42
+
+data:
+  split_year: 2018          # train on semesters before this year
+  test_size: 0.20           # for student-level random split
+
+feature:
+  num_courses: 51           # total courses in EPSEM TIC programme
+  feat_dim_multihot: 153    # 51 enrollment + 51 grades + 51 attempts
+  feat_dim_student: 154     # 153-dim + cumulative GPA
+
+micro_lstm:
+  window_size: 3
+  hidden_size: 128
+  num_layers: 1
+  dropout: 0.2
+  epochs: 100
+  batch_size: 64
+  learning_rate: 0.001
+
+macro_lstm:
+  window_size: 3
+  hidden_size: 128
+  num_layers: 1
+  dropout: 0.3
+  epochs: 100
+  batch_size: 4
+  learning_rate: 0.001
+  scaler: robust
+
+naive:
+  lag: 2                    # predict using same term from previous academic year
+
+arima:
+  max_p: 3
+  max_d: 2
+  max_q: 3
+  auto_order: true          # select order by AIC grid search
+  default_order: [1, 1, 1]
+
+decision_tree:
+  max_depth: 4
+
+random_forest:
+  n_estimators: 100
+  max_depth: 4
+  max_features: sqrt
+  auto_estimators: true     # optimize n_estimators via OOB error
+
+xgboost:
+  n_estimators: 200
+  max_depth: 4
+  learning_rate: 0.1
+  reg_alpha: 1.0
+  reg_lambda: 1.0
+
+course2vec_mlp:
+  embedding_dim: 64
+  window_size: 3
+  epochs: 100
+  batch_size: 64
+  learning_rate: 0.001

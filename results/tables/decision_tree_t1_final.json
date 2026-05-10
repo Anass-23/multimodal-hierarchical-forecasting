@@ -1,0 +1,21 @@
+{
+  "experiment_name": "decision_tree_d4_t1",
+  "timestamp": "20260502_201651",
+  "metrics": {
+    "MAE": 8.133333333333333,
+    "Precision": 0.6836374152528403,
+    "Recall": 0.633435124941691,
+    "F1": 0.6469822056838839
+  },
+  "metadata": {
+    "model": "decision_tree",
+    "transform": "tabular_t1",
+    "hyperparameters": {
+      "max_depth": 4
+    },
+    "random_seed": 42,
+    "train_samples": 1658,
+    "test_samples": 415,
+    "split_info": "random split, seed=42"
+  }
+}

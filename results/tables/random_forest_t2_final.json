@@ -1,0 +1,15 @@
+{
+  "experiment_name": "random_forest_t2",
+  "timestamp": "20260427_100715",
+  "metrics": {
+    "avg_F1": 0.5490075988829409,
+    "avg_Recall": 0.5087035264129689,
+    "avg_Precision": 0.6528540927703014
+  },
+  "metadata": {
+    "model": "random_forest",
+    "transform": "t2",
+    "max_depth": 4,
+    "seed": 42
+  }
+}

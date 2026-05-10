@@ -1,52 +1,25 @@
-PROJECT_NAME = educast
-PYTHON = env/bin/python
-
-.PHONY: install format lint test typecheck all clean check-format
+.PHONY: install train test clean
 
 install:
-	@echo "📦 Installing $(PROJECT_NAME) in editable mode with dev tools..."
-	@$(PYTHON) -m pip install -e ".[dev]"
+	pip install -e ".[dev]"
 
-format:
-	@echo "🎨 Formatting code with Black..."
-	@$(PYTHON) -m black src tests
-	@echo "📋 Sorting imports with isort..."
-	@$(PYTHON) -m isort src tests
+install-app:
+	pip install -e ".[app]"
+	cd app && npm install
 
-lint:
-	@echo "🔍 Linting code with Flake8..."
-	@$(PYTHON) -m flake8 src tests
+train:
+	python -m educast.experiments.runner --experiment all
 
-check-format:
-	@echo "✅ Checking code format..."
-	@$(PYTHON) -m black --check src tests
-	@$(PYTHON) -m isort --check-only src tests
+train-one:
+	python -m educast.experiments.runner --experiment $(EXP)
+
+server:
+	python -m educast.server
 
 test:
-	@echo "🧪 Running tests with Pytest..."
-	@$(PYTHON) -m pytest
-
-test-cov:
-	@echo "🧪 Running tests with coverage..."
-	@$(PYTHON) -m pytest --cov=educast --cov-report=term-missing
-
-typecheck:
-	@echo "🔠 Type checking with MyPy..."
-	@$(PYTHON) -m mypy src
+	pytest tests/ -v
 
 clean:
-	@echo "🧹 Cleaning up..."
-	@find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
-	@find . -type d -name "*.egg-info" -exec rm -rf {} + 2>/dev/null || true
-	@find . -type d -name ".pytest_cache" -exec rm -rf {} + 2>/dev/null || true
-	@find . -type d -name ".mypy_cache" -exec rm -rf {} + 2>/dev/null || true
-	@find . -type f -name "*.pyc" -delete 2>/dev/null || true
-	@find . -type f -name ".coverage" -delete 2>/dev/null || true
-
-# Run everything (format → lint → typecheck → test)
-all: format lint typecheck test
-	@echo "✅ All checks passed successfully!"
-
-# CI/CD check (non-modifying checks only)
-ci: check-format lint typecheck test
-	@echo "✅ CI checks passed successfully!"
+	rm -rf results/*.json results/*.csv
+	find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
+	find . -name "*.pyc" -delete

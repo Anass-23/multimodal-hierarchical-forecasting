@@ -1,70 +1,39 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "educast"
 version = "0.1.0"
-description = "EduCast: A multimodal hierarchical forecasting framework for university enrollments"
-authors = [{ name = "Anass Anhari" }]
-requires-python = ">=3.12"
-readme = "README.md"
-
+description = "Unified framework for student enrollment prediction at EPSEM-UPC"
+requires-python = ">=3.10"
 dependencies = [
-  "numpy>=1.26",
-  "pandas>=2.2",
-  "matplotlib>=3.9",
-  "scikit-learn>=1.5",
-  "jupyter>=1.0",
-  "pydantic>=2.10" # current using Pydantic version 2.12.4
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scikit-learn>=1.3",
+    "torch>=2.0",
+    "matplotlib>=3.7",
+    "seaborn>=0.12",
+    "statsmodels>=0.14",
+    "tqdm>=4.65",
+    "pydantic>=2.0",
+    "gensim>=4.0",
 ]
 
 [project.optional-dependencies]
 dev = [
-  "pytest>=8.0",          # Testing
-  "pytest-cov>=5.0",      # Test coverage
-  "mypy>=1.10",           # Type checking
-  "black>=24.0",          # Code formatting
-  "flake8>=7.0",          # Linting
-  "isort>=5.13",          # Import sorting
-  "flake8-pyproject>=1.2" # Enables flake8 to read pyproject.toml
+    "pytest>=7.0",
+    "jupyter>=1.0",
+    "ipykernel>=6.0",
+]
+app = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "websockets>=12.0",
+    "pyyaml>=6.0",
+    "httpx>=0.27",
 ]
 
-[build-system]
-requires = ["setuptools >= 77.0.3"]
-build-backend = "setuptools.build_meta"
-
-[tool.setuptools]
-package-dir = {"" = "src"}
-packages = ["educast"]
-
-[tool.pytest.ini_options]
-addopts = "--maxfail=1 --disable-warnings -q"
-testpaths = ["tests"]
-
-[tool.mypy]
-plugins = ["pydantic.mypy"]
-python_version = "3.12"
-warn_return_any = true
-warn_unused_configs = true
-ignore_missing_imports = true
-disallow_untyped_defs = false
-
-[tool.black]
-line-length = 88
-target-version = ["py312"]
-include = '\.pyi?$'
-
-[tool.flake8]
-max-line-length = 88
-extend-ignore = ["E203", "W503", "E501"]
-exclude = [
-  ".git",
-  "__pycache__",
-  ".venv",
-  "env",
-  "venv",
-  "build",
-  "dist",
-  "*.egg-info"
-]
-
-[tool.isort]
-profile = "black"
-line_length = 88
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["educast*"]

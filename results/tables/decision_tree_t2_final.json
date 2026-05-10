@@ -1,0 +1,15 @@
+{
+  "experiment_name": "decision_tree_t2",
+  "timestamp": "20260427_100715",
+  "metrics": {
+    "avg_F1": 0.6528269367827613,
+    "avg_Recall": 0.6500387705213057,
+    "avg_Precision": 0.6701590098663704
+  },
+  "metadata": {
+    "model": "decision_tree",
+    "transform": "t2",
+    "max_depth": 4,
+    "seed": 42
+  }
+}

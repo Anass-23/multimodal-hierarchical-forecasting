@@ -1,0 +1,30 @@
+{
+  "name": "educast-app",
+  "version": "0.1.0",
+  "description": "educast — Student Enrollment Prediction Desktop App",
+  "main": "out/main/main.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "dev:renderer": "vite",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.23.1",
+    "plotly.js-dist-min": "^2.33.0",
+    "react-plotly.js": "^2.6.0",
+    "lucide-react": "^0.378.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "electron": "^30.0.8",
+    "electron-vite": "^2.2.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.12"
+  }
+}

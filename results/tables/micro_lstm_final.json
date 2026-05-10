@@ -1,0 +1,28 @@
+{
+  "experiment_name": "micro_lstm",
+  "timestamp": "20260506_213135",
+  "metrics": {
+    "MAE": 1.7305388143264866,
+    "MAE+": 0.9883938164481714,
+    "MAE-": 2.0306515132110623,
+    "Precision": 0.5331708999420692,
+    "Recall": 0.4759183928079795,
+    "F1": 0.49686480844497566
+  },
+  "metadata": {
+    "model": "lstm_micro",
+    "transform": "multihot_153",
+    "hyperparameters": {
+      "hidden_size": 128,
+      "num_layers": 1,
+      "dropout": 0.2,
+      "epochs": 100,
+      "batch_size": 64,
+      "window_size": 3
+    },
+    "random_seed": 42,
+    "train_samples": 1322,
+    "test_samples": 836,
+    "split_info": "year >= 2018"
+  }
+}

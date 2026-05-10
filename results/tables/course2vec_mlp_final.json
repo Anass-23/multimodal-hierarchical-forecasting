@@ -1,0 +1,26 @@
+{
+  "experiment_name": "course2vec_mlp",
+  "timestamp": "20260502_201708",
+  "metrics": {
+    "MAE": 1.8137561907864461,
+    "MAE+": 1.157492515535712,
+    "MAE-": 1.9747052014328152,
+    "Precision": 0.4594423610327935,
+    "Recall": 0.4698104623082124,
+    "F1": 0.45707813430824806
+  },
+  "metadata": {
+    "model": "course2vec_mlp",
+    "transform": "multihot_flat",
+    "hyperparameters": {
+      "embedding_dim": 64,
+      "epochs": 100,
+      "batch_size": 64,
+      "window_size": 3
+    },
+    "random_seed": 42,
+    "train_samples": 1322,
+    "test_samples": 836,
+    "split_info": "year >= 2018"
+  }
+}

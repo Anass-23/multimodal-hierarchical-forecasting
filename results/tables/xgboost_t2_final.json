@@ -1,0 +1,17 @@
+{
+  "experiment_name": "xgboost_t2",
+  "timestamp": "20260427_100952",
+  "metrics": {
+    "avg_F1": 0.5972510916790043,
+    "avg_Recall": 0.6148088117759021,
+    "avg_Precision": 0.5890893787052748
+  },
+  "metadata": {
+    "model": "xgboost",
+    "transform": "t2",
+    "n_estimators": 200,
+    "max_depth": 4,
+    "learning_rate": 0.1,
+    "seed": 42
+  }
+}

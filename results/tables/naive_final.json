@@ -1,0 +1,20 @@
+{
+  "experiment_name": "naive",
+  "timestamp": "20260506_213118",
+  "metrics": {
+    "MAE": 2.0784313725490198,
+    "MAE+": 3.3379084967320263,
+    "MAE-": 3.316993464052288
+  },
+  "metadata": {
+    "model": "naive",
+    "transform": "aggregate",
+    "hyperparameters": {
+      "lag": 2
+    },
+    "random_seed": 42,
+    "train_samples": 16,
+    "test_samples": 7,
+    "split_info": "year >= 2018"
+  }
+}
