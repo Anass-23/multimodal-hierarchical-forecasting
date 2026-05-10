@@ -39,7 +39,7 @@ This project implements and evaluates multiple forecasting models for predicting
 ## Key Results
 
 | Model | MAE |
-|---|---|---|---|
+|---|---|
 | Naïve (lag-2) | 4.18 |
 | Macro LSTM | 5.57 |
 | Course2Vec MLP | 1.78 |
