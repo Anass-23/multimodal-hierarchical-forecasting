@@ -38,13 +38,13 @@ This project implements and evaluates multiple forecasting models for predicting
 
 ## Key Results
 
-| Model | MAE | MAE+ | MAE- |
+| Model | MAE |
 |---|---|---|---|
-| Naïve (lag-2) | 4.18 | — | — |
-| Macro LSTM | 5.57 | — | — |
-| Course2Vec MLP | 1.78 | — | — |
-| **Micro LSTM** | **1.73** | — | — |
-| Per-course Reconciliation | **1.43** | — | — |
+| Naïve (lag-2) | 4.18 |
+| Macro LSTM | 5.57 |
+| Course2Vec MLP | 1.78 |
+| **Micro LSTM** | **1.73** |
+| Per-course Reconciliation | **1.43** |
 
 Full per-course breakdowns are in `results/tables/`; plots are in `results/figures/`.
 
